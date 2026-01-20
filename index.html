@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Alemam | Portfolio</title>
+    <title>Mohamed Alemam | Data Engineer Portfolio</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -136,7 +136,7 @@
 
     <canvas id="canvas-bg" class="fixed top-0 left-0 w-full h-full -z-10 opacity-40"></canvas>
 
-    <nav class="fixed top-0 w-full z-50 glass-card border-b border-white/5 bg-darker/80 supports-[backdrop-filter]:bg-darker/60 transition-all duration-300">
+    <nav class="fixed top-0 w-full z-40 glass-card border-b border-white/5 bg-darker/80 supports-[backdrop-filter]:bg-darker/60 transition-all duration-300">
         <div class="container mx-auto px-6 h-16 md:h-20 flex justify-between items-center">
             <a href="#" class="text-xl md:text-2xl font-bold font-mono text-white flex items-center gap-2 group">
                 <span class="text-primary group-hover:text-secondary transition-colors">&lt;</span>MO<span class="text-secondary group-hover:text-primary transition-colors">/&gt;</span>
@@ -144,7 +144,6 @@
             <div class="hidden lg:flex gap-8 text-sm font-medium text-slate-400">
                 <a href="#about" class="hover:text-white transition-colors">About</a>
                 <a href="#experience" class="hover:text-white transition-colors">Experience</a>
-                <a href="#education" class="hover:text-white transition-colors">Education</a>
                 <a href="#certificates" class="hover:text-white transition-colors">Certificates</a>
                 <a href="#skills" class="hover:text-white transition-colors">Skills</a>
             </div>
@@ -154,11 +153,11 @@
         </div>
     </nav>
 
-    <section id="about" class="h-screen min-h-[600px] flex items-center justify-center relative overflow-hidden">
+    <section id="about" class="min-h-screen pt-32 pb-20 flex items-center justify-center relative overflow-hidden">
         <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -z-10 animate-pulse-slow"></div>
         <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[100px] -z-10 animate-pulse-slow" style="animation-delay: 2s;"></div>
 
-        <div class="container mx-auto px-6 text-center z-10 pt-10">
+        <div class="container mx-auto px-6 text-center z-10">
             <div class="mb-6 inline-block animate-float">
                 <div class="w-32 h-32 rounded-full bg-gradient-to-tr from-slate-800 to-slate-900 p-1 ring-1 ring-white/10 shadow-2xl">
                     <div class="w-full h-full rounded-full bg-darker flex items-center justify-center text-5xl text-slate-200">
@@ -172,23 +171,33 @@
                 Mohamed <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-secondary">Alemam</span>
             </h1>
             
-            <div class="h-8 mb-8 text-lg md:text-xl text-slate-400 font-mono flex justify-center items-center gap-2">
+            <div class="h-8 mb-6 text-lg md:text-xl text-slate-400 font-mono flex justify-center items-center gap-2">
                 <span>I am</span> <span id="typed-text" class="text-white font-bold"></span>
             </div>
 
-            <p class="max-w-2xl mx-auto text-slate-400 leading-relaxed mb-10 text-base md:text-lg">
-                Experienced Data Engineer & Instructor transforming raw data into strategic insights. 
-                Expert in building scalable pipelines, semantic modeling, and empowering the next generation of data professionals.
-            </p>
+            <div class="max-w-3xl mx-auto mb-10 p-6 glass-card rounded-2xl border-l-4 border-primary text-left">
+                <p class="text-slate-300 leading-relaxed text-sm md:text-base">
+                    Data Engineer with a bachelor's degree in computer science and two years of hands-on experience in data engineering, data analysis, and data visualization to support data-driven business decisions. Skilled in building and optimizing data pipelines, extracting insights, and developing analytical dashboards using SQL, Python, PySpark, Excel, and Power BI. Possess over three years of experience as a Data Analysis Instructor.
+                </p>
+            </div>
 
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#experience" class="px-8 py-3 rounded-lg bg-primary hover:bg-blue-600 text-white font-bold transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:-translate-y-1">
-                    View Experience
-                </a>
+                <button onclick="document.getElementById('experience').scrollIntoView({behavior: 'smooth'})" class="px-8 py-3 rounded-lg bg-primary hover:bg-blue-600 text-white font-bold transition-all shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:-translate-y-1 flex items-center gap-2">
+                    <i class="fa-solid fa-briefcase"></i> View Experience
+                </button>
                 
                 <button onclick="openGallery()" class="px-8 py-3 rounded-lg bg-gold hover:bg-yellow-400 text-slate-900 font-bold transition-all shadow-[0_0_20px_rgba(251,191,36,0.4)] animate-glow hover:-translate-y-1 flex items-center gap-2">
                     <i class="fa-solid fa-images"></i> Certificates Gallery
                 </button>
+
+                <div class="flex gap-2">
+                    <button onclick="openCVPreview()" class="px-6 py-3 bg-transparent border border-slate-600 hover:border-secondary hover:text-secondary text-slate-300 rounded-lg font-semibold transition-all flex items-center gap-2 hover:bg-slate-800">
+                        <i class="fa-solid fa-eye"></i> Preview CV
+                    </button>
+                    <a href="Mohamed-Alemam-CV.pdf" download class="px-6 py-3 bg-slate-800 border border-slate-700 hover:bg-slate-700 text-white rounded-lg font-semibold transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-download"></i> Download
+                    </a>
+                </div>
             </div>
         </div>
         
@@ -211,25 +220,25 @@
 
                     <div class="relative flex flex-col md:flex-row items-center justify-between group reveal">
                         <div class="md:w-1/2 order-2 md:order-1 md:text-right md:pr-12 pl-12 md:pl-0">
-                             <h3 class="text-2xl font-bold text-secondary mb-1">Senior Instructor</h3>
-                             <div class="text-white text-sm font-semibold mb-2">EYouth</div>
+                             <h3 class="text-2xl font-bold text-secondary mb-1">Senior Data Analysis Instructor</h3>
+                             <div class="text-white text-sm font-semibold mb-2">EYouth <span class="text-xs bg-slate-700 text-slate-300 px-1.5 py-0.5 rounded ml-2">Part Time</span></div>
                              <p class="text-slate-400 text-sm leading-relaxed">
-                                Spearheading new Data Analysis tracks. Designing comprehensive curriculum for SQL, Python, and Power BI to simulate real-world business scenarios.
+                                Leading the design and delivery of the Data Analysis Diploma within the Digital Egypt Pioneers Initiative (DEPI). Developing curriculum, practical training, and mentoring participants to build market-ready analytical skills.
                             </p>
                         </div>
                         <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-darker border-2 border-secondary rounded-full z-10 shadow-[0_0_15px_rgba(20,184,166,0.5)] order-1 md:order-2"></div>
                         <div class="md:w-1/2 md:pl-12 pl-12 order-3 text-left">
-                            <span class="text-sm font-mono text-slate-500 block mb-1">11/2025 - Present</span>
+                            <span class="text-sm font-mono text-slate-500 block mb-1">12/2025 - Present</span>
                             <span class="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded border border-secondary/20">Data Analysis</span>
                         </div>
                     </div>
 
                     <div class="relative flex flex-col md:flex-row items-center justify-between group reveal">
                         <div class="md:w-1/2 order-2 md:order-3 md:pl-12 pl-12 md:text-left">
-                             <h3 class="text-2xl font-bold text-primary mb-1">Data Engineer Associate</h3>
-                             <div class="text-white text-sm font-semibold mb-2">Gentaa</div>
+                             <h3 class="text-2xl font-bold text-primary mb-1">Data Engineer</h3>
+                             <div class="text-white text-sm font-semibold mb-2">Gentaa <span class="text-xs bg-slate-700 text-slate-300 px-1.5 py-0.5 rounded ml-2">Full Time</span></div>
                              <p class="text-slate-400 text-sm leading-relaxed">
-                                Building scalable pipelines with PySpark, SQL Server & Fabric. Designing semantic models for high-performance analytics.
+                                Responsible for building and maintaining scalable data pipelines using PySpark, SQL Server, and Fabric. Designing and optimizing semantic models for advanced analytics and reporting.
                             </p>
                         </div>
                         <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-darker border-2 border-primary rounded-full z-10 shadow-[0_0_15px_rgba(59,130,246,0.5)] order-1 md:order-2"></div>
@@ -241,10 +250,10 @@
 
                     <div class="relative flex flex-col md:flex-row items-center justify-between group reveal">
                         <div class="md:w-1/2 order-2 md:order-1 md:text-right md:pr-12 pl-12 md:pl-0">
-                             <h3 class="text-2xl font-bold text-slate-200 mb-1">Senior Instructor</h3>
-                             <div class="text-slate-400 text-sm font-semibold mb-2">AMIT Learning (DEPI)</div>
+                             <h3 class="text-2xl font-bold text-slate-200 mb-1">Senior Data Analysis Instructor</h3>
+                             <div class="text-slate-400 text-sm font-semibold mb-2">AMIT Learning (DEPI) <span class="text-xs bg-slate-700 text-slate-300 px-1.5 py-0.5 rounded ml-2">Part Time</span></div>
                              <p class="text-slate-400 text-sm leading-relaxed">
-                                Led the Digital Egypt Pioneers Initiative track. Taught comprehensive courses covering Excel, SQL, Power BI, and Python.
+                                Delivered comprehensive Data Analysis programs (Excel, SQL, Power BI, Python) with a focus on real-world applications, hands-on training, and project-based learning.
                             </p>
                         </div>
                         <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-darker border-2 border-slate-500 rounded-full z-10 order-1 md:order-2"></div>
@@ -257,9 +266,9 @@
                     <div class="relative flex flex-col md:flex-row items-center justify-between group reveal">
                         <div class="md:w-1/2 order-2 md:order-3 md:pl-12 pl-12 md:text-left">
                              <h3 class="text-2xl font-bold text-accent mb-1">Data Analyst</h3>
-                             <div class="text-white text-sm font-semibold mb-2">Etqan Consultancy</div>
+                             <div class="text-white text-sm font-semibold mb-2">Etqan Consultancy <span class="text-xs bg-slate-700 text-slate-300 px-1.5 py-0.5 rounded ml-2">Full Time</span></div>
                              <p class="text-slate-400 text-sm leading-relaxed">
-                                Real estate market analytics & financial modeling. Providing data-driven insights for investment decisions.
+                                Experienced in real estate analytics, financial modeling, and market trend analysis. Delivering data-driven solutions for investment and development decisions.
                             </p>
                         </div>
                         <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-darker border-2 border-accent rounded-full z-10 order-1 md:order-2"></div>
@@ -271,10 +280,10 @@
 
                     <div class="relative flex flex-col md:flex-row items-center justify-between group reveal">
                         <div class="md:w-1/2 order-2 md:order-1 md:text-right md:pr-12 pl-12 md:pl-0">
-                             <h3 class="text-2xl font-bold text-slate-400 mb-1">Data Instructor</h3>
-                             <div class="text-slate-500 text-sm font-semibold mb-2">Mechanism AI</div>
+                             <h3 class="text-2xl font-bold text-slate-400 mb-1">Data Analysis Instructor</h3>
+                             <div class="text-slate-500 text-sm font-semibold mb-2">Mechanism AI <span class="text-xs bg-slate-700 text-slate-300 px-1.5 py-0.5 rounded ml-2">Part Time</span></div>
                              <p class="text-slate-500 text-sm leading-relaxed">
-                                Mentored 40+ students in Excel, Databases, SSIS, and Python through project-based learning.
+                                Led the Data Analysis Diploma Program, delivering courses in Excel, Databases, Power BI, SSIS, and Python to over 40 students across three cohorts.
                             </p>
                         </div>
                         <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 bg-darker border-2 border-slate-700 rounded-full z-10 order-1 md:order-2"></div>
@@ -303,10 +312,12 @@
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">Bachelor of Computer Science</h3>
                     <p class="text-slate-400 text-sm mb-4">El-Shorouk Academy</p>
-                    <div class="text-xs text-slate-500 font-mono mb-4">2019 - 2023</div>
+                    <div class="text-xs text-slate-500 font-mono mb-4">09/2019 - 05/2023</div>
                     <div class="border-t border-white/5 pt-4">
                         <p class="text-sm text-slate-300"><strong class="text-white">Grade:</strong> Good</p>
-                        <p class="text-sm text-slate-300 mt-1"><strong class="text-white">Project:</strong> Excellent (Smart Home Automation)</p>
+                        <p class="text-sm text-slate-300 mt-1">
+                            <strong class="text-white">Project:</strong> Excellent. Smart Home Automation using AI, voice commands, and hand gestures.
+                        </p>
                     </div>
                 </div>
 
@@ -315,11 +326,11 @@
                         <i class="fa-solid fa-server text-xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">Big Data Scholarship</h3>
-                    <p class="text-slate-400 text-sm mb-4">National Telecommunication Institute (NTI)</p>
-                    <div class="text-xs text-slate-500 font-mono mb-4">140 Hours</div>
+                    <p class="text-slate-400 text-sm mb-4">NTI (140 Hours)</p>
+                    <div class="text-xs text-slate-500 font-mono mb-4">08/2022 - 09/2022</div>
                     <div class="border-t border-white/5 pt-4">
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            Linux, SQL, Python, HDFS, MapReduce, Spark, HBase, Hive, Kafka, Zookeeper.
+                        <p class="text-sm text-slate-400 leading-relaxed text-xs">
+                            Linux, SQL, Python, HDFS, MapReduce, Spark, HBase, Hive, Streaming, Flink, Loader, Flume, Kafka, Zookeeper.
                         </p>
                     </div>
                 </div>
@@ -329,8 +340,8 @@
                         <i class="fa-solid fa-chart-pie text-xl"></i>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-2">BI Development Scholarship</h3>
-                    <p class="text-slate-400 text-sm mb-4">Information Technology Institute (ITI)</p>
-                    <div class="text-xs text-slate-500 font-mono mb-4">150 Hours</div>
+                    <p class="text-slate-400 text-sm mb-4">ITI (150 Hours)</p>
+                    <div class="text-xs text-slate-500 font-mono mb-4">07/2021 - 08/2021</div>
                     <div class="border-t border-white/5 pt-4">
                         <p class="text-sm text-slate-400 leading-relaxed">
                             Database, SQL Server, Data Mining, BI, Power BI, XML, Tableau.
@@ -366,8 +377,13 @@
                     <p class="text-sm text-slate-400 mb-6">
                         Validated expertise in designing data models, visualization, and deploying actionable insights.
                     </p>
-                    <div class="flex items-center gap-2 text-xs font-mono text-gold">
-                        <i class="fa-solid fa-check-circle"></i> Certified
+                    <div class="flex items-center justify-between border-t border-white/5 pt-4">
+                        <div class="flex items-center gap-2 text-xs font-mono text-gold">
+                            <i class="fa-solid fa-check-circle"></i> Verified
+                        </div>
+                        <a href="https://learn.microsoft.com/en-us/users/mohamedalemam-2376/credentials/e7c8d570576c57fa" target="_blank" class="text-xs text-slate-400 hover:text-white flex items-center gap-1">
+                            Verify Credential <i class="fa-solid fa-external-link-alt"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -383,8 +399,10 @@
                         17 Courses covering Data Cleaning, Manipulation, Visualization, DAX, and Power Query.
                     </p>
                     <div class="flex justify-between items-center border-t border-white/5 pt-4">
-                        <span class="text-xs font-mono text-slate-500">08/2024 - 11/2024</span>
                         <span class="text-xs bg-emerald-500/10 text-emerald-400 px-2 py-1 rounded">Track Completed</span>
+                        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/d6ab530835b7bfd09e910c159c16ff63d3770a17" target="_blank" class="text-xs text-slate-400 hover:text-white flex items-center gap-1">
+                            Verify <i class="fa-solid fa-external-link-alt"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -400,8 +418,10 @@
                         Mastered SQL database management, data handling, and essential engineering concepts.
                     </p>
                     <div class="flex justify-between items-center border-t border-white/5 pt-4">
-                        <span class="text-xs font-mono text-slate-500">09/2024 - 11/2024</span>
                         <span class="text-xs bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Track Completed</span>
+                         <a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/1df34c33a8d7dd9badbc7c6737a8be96be77e863" target="_blank" class="text-xs text-slate-400 hover:text-white flex items-center gap-1">
+                            Verify <i class="fa-solid fa-external-link-alt"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -444,7 +464,8 @@
                         <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">PySpark</span>
                         <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">SQL Server</span>
                         <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">Fabric</span>
-                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">ETL</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">SSIS/ETL</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">DWH</span>
                     </div>
                 </div>
 
@@ -452,12 +473,13 @@
                     <div class="w-14 h-14 mx-auto bg-slate-800 rounded-full flex items-center justify-center mb-4 group-hover:bg-secondary/20 transition-colors">
                         <i class="fa-solid fa-chart-column text-2xl text-slate-400 group-hover:text-secondary transition-colors"></i>
                     </div>
-                    <h3 class="font-bold text-white mb-3">Visualization</h3>
+                    <h3 class="font-bold text-white mb-3">Visualization & BI</h3>
                     <div class="flex flex-wrap justify-center gap-2">
                         <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">Power BI</span>
                         <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">DAX</span>
                         <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">Excel</span>
                         <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">SSRS</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">SSAS</span>
                         <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">Tableau</span>
                     </div>
                 </div>
@@ -471,7 +493,7 @@
                         <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">Leadership</span>
                         <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">Mentoring</span>
                         <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">Communication</span>
-                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">Problem Solving</span>
+                        <span class="text-xs bg-slate-800 text-slate-300 px-2 py-1 rounded">Adaptability</span>
                     </div>
                 </div>
 
@@ -510,7 +532,10 @@
                     <div>
                         <h4 class="text-lg font-bold text-white">IEEE El-Shorouk Academy</h4>
                         <p class="text-xs text-secondary mb-2 font-mono">Technical Team (10/2021 - 06/2022)</p>
-                        <p class="text-sm text-slate-400">Introduced Python for Data Analysis to 30+ students. Projects included COVID-19 and Sales Analysis.</p>
+                        <p class="text-sm text-slate-400">
+                            Introduced Python for Data Analysis to 30+ students. 
+                            <span class="block mt-2 text-xs text-slate-500">Projects: COVID-19 Analysis, Supermarket Sales, Madrid Real Estate, Olympic Analysis.</span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -524,12 +549,9 @@
                     <div class="p-6">
                         <h3 class="text-lg font-bold text-white mb-1">Google Solution Challenge</h3>
                         <p class="text-xs text-slate-500 font-mono mb-3">IoT & AI Project</p>
-                        <p class="text-slate-400 text-sm">
-                            Addressed sustainable development goals with "Smart Home Automation" using Google Tech.
-                        </p>
+                        <p class="text-slate-400 text-sm">Addressed sustainable development goals with "Smart Home Automation" using Google Tech.</p>
                     </div>
                 </div>
-
                 <div class="glass-card rounded-xl overflow-hidden group reveal" data-tilt data-tilt-max="5">
                     <div class="h-40 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center relative overflow-hidden">
                         <i class="fa-solid fa-mobile-screen text-5xl text-slate-700 group-hover:text-purple-400 transition-colors duration-500"></i>
@@ -538,12 +560,9 @@
                     <div class="p-6">
                         <h3 class="text-lg font-bold text-white mb-1">Vodafone Hackathon</h3>
                         <p class="text-xs text-slate-500 font-mono mb-3">Accessibility App</p>
-                        <p class="text-slate-400 text-sm">
-                            Developed "Smart Vision" app for visually impaired (Cash Reader, OCR, Object Detection).
-                        </p>
+                        <p class="text-slate-400 text-sm">Developed "Smart Vision" app for visually impaired (Cash Reader, OCR, Object Detection).</p>
                     </div>
                 </div>
-
                 <div class="glass-card rounded-xl overflow-hidden group reveal" data-tilt data-tilt-max="5">
                     <div class="h-40 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center relative overflow-hidden">
                         <i class="fa-solid fa-code text-5xl text-slate-700 group-hover:text-green-400 transition-colors duration-500"></i>
@@ -552,16 +571,14 @@
                     <div class="p-6">
                         <h3 class="text-lg font-bold text-white mb-1">ACPC Competition</h3>
                         <p class="text-xs text-slate-500 font-mono mb-3">Algorithms</p>
-                        <p class="text-slate-400 text-sm">
-                            Participant in the esteemed Arab Collegiate Programming Contest (ICPC Qualifier).
-                        </p>
+                        <p class="text-slate-400 text-sm">Participant in the esteemed Arab Collegiate Programming Contest (ICPC Qualifier).</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 bg-darker border-t border-white/5 text-center">
+    <footer class="py-12 bg-darker border-t border-white/5 text-center relative z-20">
         <div class="container mx-auto px-6">
             <h2 class="text-2xl font-bold text-white mb-8">Let's build something amazing.</h2>
             <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-8">
@@ -594,8 +611,23 @@
                 </button>
             </div>
             <div class="flex-1 overflow-y-auto p-8 bg-slate-950/50">
-                <div id="gallery-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cv-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay bg-darker/90 backdrop-blur-md">
+        <div class="bg-slate-900 w-full max-w-5xl h-[90vh] rounded-2xl border border-slate-700 shadow-2xl flex flex-col modal-content relative overflow-hidden">
+            <div class="flex justify-between items-center p-4 border-b border-slate-700 bg-slate-800">
+                <h2 class="text-lg font-bold text-white flex items-center gap-2"><i class="fa-solid fa-file-pdf text-red-400"></i> CV Preview</h2>
+                <div class="flex gap-2">
+                    <a href="Mohamed-Alemam-CV.pdf" download class="p-2 bg-slate-700 hover:bg-slate-600 rounded text-white text-sm">Download</a>
+                    <button onclick="closeCVPreview()" class="p-2 hover:bg-slate-700 rounded-full text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
+                </div>
+            </div>
+            <div class="flex-1 bg-slate-800">
+                <iframe src="Mohamed-Alemam-CV.pdf#toolbar=0" class="w-full h-full border-none"></iframe>
             </div>
         </div>
     </div>
@@ -603,7 +635,7 @@
     <script>
         /* --- 1. Typing Effect --- */
         new Typed('#typed-text', {
-            strings: ['a Data Analytics Engineer.', 'a Power BI Expert.', 'an Instructor.', 'a Problem Solver.'],
+            strings: ['a Data Engineer.', 'a Power BI Certified.', 'a Senior Instructor.', 'a Problem Solver.'],
             typeSpeed: 50,
             backSpeed: 30,
             backDelay: 2000,
@@ -625,7 +657,7 @@
         window.addEventListener('scroll', scrollReveal);
         scrollReveal(); 
 
-        /* --- 3. Gallery Logic (UPDATED: DOUBLED SIZE for Cards) --- */
+        /* --- 3. Gallery Logic (UPDATED: 3 COLUMNS & EXTRA TALL CARDS) --- */
         const galleryFiles = [
             "Microsoft_Certified_Power_BI_Data_Analyst_Associate_2025.pdf",
             "DataCamp_Associate_Data_Engineer_in_SQL_Track_2024.pdf",
@@ -666,19 +698,19 @@
                     </div>
                 `;
 
-                // 2. Body (HUGE SIZE - 850px height to simulate 'Double' size)
+                // 2. Body (EXTRA TALL SIZE - 800px height)
                 let bodyHTML = '';
                 if (isPdf) {
-                    // Fit view + Large Height
+                    // Fit view + Large Height to show full certificate
                     bodyHTML = `
-                        <div class="flex-1 bg-slate-900 p-2 relative h-[850px]">
+                        <div class="flex-1 bg-slate-900 p-2 relative h-[800px]">
                              <iframe src="${basePath}${file}#toolbar=0&navpanes=0&scrollbar=0&view=Fit" class="w-full h-full border-none rounded bg-white shadow-inner" loading="lazy"></iframe>
                         </div>
                     `;
                 } else {
                     // Image display
                     bodyHTML = `
-                        <div class="flex-1 bg-slate-900 p-2 flex items-center justify-center h-[850px]">
+                        <div class="flex-1 bg-slate-900 p-2 flex items-center justify-center h-[800px]">
                              <img src="${basePath}${file}" alt="${cleanName}" class="max-w-full max-h-full object-contain rounded shadow-lg" loading="lazy">
                         </div>
                     `;
@@ -700,7 +732,22 @@
             document.body.style.overflow = 'auto';
         }
 
-        /* --- 4. Calm Particles Background --- */
+        /* --- 4. CV Modal Logic --- */
+        function openCVPreview() {
+            const modal = document.getElementById('cv-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.add('open'), 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCVPreview() {
+            const modal = document.getElementById('cv-modal');
+            modal.classList.remove('open');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+            document.body.style.overflow = 'auto';
+        }
+
+        /* --- 5. Background Particles --- */
         const canvas = document.getElementById('canvas-bg');
         const ctx = canvas.getContext('2d');
         let width, height, particles = [];
@@ -716,7 +763,7 @@
             constructor() {
                 this.x = Math.random() * width;
                 this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 0.2; // Very slow calm speed
+                this.vx = (Math.random() - 0.5) * 0.2; 
                 this.vy = (Math.random() - 0.5) * 0.2;
                 this.size = Math.random() * 2 + 0.5;
                 this.color = Math.random() > 0.5 ? 'rgba(59, 130, 246, 0.2)' : 'rgba(20, 184, 166, 0.2)';
