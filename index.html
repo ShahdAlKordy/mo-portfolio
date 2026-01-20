@@ -657,7 +657,7 @@
         window.addEventListener('scroll', scrollReveal);
         scrollReveal(); 
 
-        /* --- 3. Gallery Logic (UPDATED: 2 Columns & Card Style) --- */
+        /* --- 3. Gallery Logic (UPDATED: Fixed Height & Fit View) --- */
         const galleryFiles = [
             "Microsoft_Certified_Power_BI_Data_Analyst_Associate_2025.pdf",
             "DataCamp_Associate_Data_Engineer_in_SQL_Track_2024.pdf",
@@ -698,19 +698,20 @@
                     </div>
                 `;
 
-                // 2. Body (Embedded PDF/Image)
+                // 2. Body (Embedded PDF/Image) - UPDATED HEIGHT & VIEW MODE
                 let bodyHTML = '';
                 if (isPdf) {
-                    // Iframe for PDF (Styled to look like a page inside the dark box)
+                    // Changed view to 'Fit' so it shows the whole page (no crop/scroll)
+                    // Adjusted height to 450px which is good for 4:3 landscape ratio in this grid
                     bodyHTML = `
-                        <div class="flex-1 bg-slate-900 p-2 relative h-[500px]">
-                             <iframe src="${basePath}${file}#toolbar=0&navpanes=0&scrollbar=0&view=FitH" class="w-full h-full border-none rounded bg-white shadow-inner" loading="lazy"></iframe>
+                        <div class="flex-1 bg-slate-900 p-2 relative h-[450px]">
+                             <iframe src="${basePath}${file}#toolbar=0&navpanes=0&scrollbar=0&view=Fit" class="w-full h-full border-none rounded bg-white shadow-inner" loading="lazy"></iframe>
                         </div>
                     `;
                 } else {
                     // Image display
                     bodyHTML = `
-                        <div class="flex-1 bg-slate-900 p-2 flex items-center justify-center h-[500px]">
+                        <div class="flex-1 bg-slate-900 p-2 flex items-center justify-center h-[450px]">
                              <img src="${basePath}${file}" alt="${cleanName}" class="max-w-full max-h-full object-contain rounded shadow-lg" loading="lazy">
                         </div>
                     `;
