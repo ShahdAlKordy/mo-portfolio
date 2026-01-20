@@ -597,8 +597,8 @@
         </div>
     </footer>
 
-    <div id="gallery-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay bg-darker/95 backdrop-blur-md">
-        <div class="bg-slate-900 w-full max-w-[90rem] h-[95vh] rounded-2xl border border-slate-700 shadow-2xl flex flex-col modal-content relative overflow-hidden">
+    <div id="gallery-modal" class="fixed inset-0 z-50 flex items-center justify-center p-2 modal-overlay bg-darker/95 backdrop-blur-md">
+        <div class="bg-slate-900 w-[98%] max-w-[1920px] h-[95vh] rounded-2xl border border-slate-700 shadow-2xl flex flex-col modal-content relative overflow-hidden">
             <div class="flex justify-between items-center p-4 border-b border-slate-700 bg-slate-800">
                 <div class="flex items-center gap-3">
                     <div class="p-2 bg-amber-500/20 rounded-lg"><i class="fa-solid fa-medal text-amber-400 text-xl"></i></div>
@@ -611,7 +611,7 @@
                 </button>
             </div>
             <div class="flex-1 overflow-y-auto p-8 bg-slate-950/50">
-                <div id="gallery-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div id="gallery-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                     </div>
             </div>
         </div>
@@ -657,7 +657,7 @@
         window.addEventListener('scroll', scrollReveal);
         scrollReveal(); 
 
-        /* --- 3. Gallery Logic (UPDATED: Fixed Height & Fit View) --- */
+        /* --- 3. Gallery Logic (UPDATED: DOUBLED SIZE for Cards) --- */
         const galleryFiles = [
             "Microsoft_Certified_Power_BI_Data_Analyst_Associate_2025.pdf",
             "DataCamp_Associate_Data_Engineer_in_SQL_Track_2024.pdf",
@@ -679,11 +679,11 @@
                 const isPdf = file.toLowerCase().endsWith('.pdf');
                 const cleanName = file.replace(/_/g, ' ').replace('.pdf', '').replace('.jpeg', '').replace('.jpg', '');
                 
-                // Card Wrapper (Dark theme with border)
+                // Card Wrapper
                 const card = document.createElement('div');
                 card.className = "bg-slate-800 rounded-xl border border-slate-700 overflow-hidden shadow-2xl flex flex-col h-full hover:border-slate-500 transition-colors duration-300";
                 
-                // 1. Header (Like the image)
+                // 1. Header
                 let headerHTML = `
                     <div class="flex justify-between items-center p-3 border-b border-slate-700 bg-slate-900/50">
                         <div class="flex items-center gap-3 overflow-hidden">
@@ -698,20 +698,19 @@
                     </div>
                 `;
 
-                // 2. Body (Embedded PDF/Image) - UPDATED HEIGHT & VIEW MODE
+                // 2. Body (HUGE SIZE - 850px height to simulate 'Double' size)
                 let bodyHTML = '';
                 if (isPdf) {
-                    // Changed view to 'Fit' so it shows the whole page (no crop/scroll)
-                    // Adjusted height to 450px which is good for 4:3 landscape ratio in this grid
+                    // Fit view + Large Height
                     bodyHTML = `
-                        <div class="flex-1 bg-slate-900 p-2 relative h-[450px]">
+                        <div class="flex-1 bg-slate-900 p-2 relative h-[850px]">
                              <iframe src="${basePath}${file}#toolbar=0&navpanes=0&scrollbar=0&view=Fit" class="w-full h-full border-none rounded bg-white shadow-inner" loading="lazy"></iframe>
                         </div>
                     `;
                 } else {
                     // Image display
                     bodyHTML = `
-                        <div class="flex-1 bg-slate-900 p-2 flex items-center justify-center h-[450px]">
+                        <div class="flex-1 bg-slate-900 p-2 flex items-center justify-center h-[850px]">
                              <img src="${basePath}${file}" alt="${cleanName}" class="max-w-full max-h-full object-contain rounded shadow-lg" loading="lazy">
                         </div>
                     `;
